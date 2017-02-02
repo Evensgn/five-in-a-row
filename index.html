@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="Evensgn">
+    <link rel="icon" href="images/favicon.ico">
+
+    <title>Five in a Row | Evensgn's Lab</title>
+    <script async src="http://c.cnzz.com/core.php"></script>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="chess.css" rel="stylesheet">
+
+    <div class="hideit" width="0" height="0">
+      <img src="images/white.png" id="white">
+      <img src="images/white-n.png" id="white-n">
+      <img src="images/black.png" id="black">
+      <img src="images/black-n.png" id="black-n">
+    </div>
+
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body id="mBody">
+    <div>
+      <canvas id="chessBoard" width="640px" height="640px">
+        QAQ. Your browser does not support the HTML5 canvas tag.
+      </canvas>
+      <div id="infoBoard">
+        <div class="alert alert-success infoDiv" role="alert">
+          <p style="font-size:18px"><cn>五子棋</cn> &nbsp;&nbsp;|&nbsp;&nbsp; Five in a Row</b></p>
+        </div>
+        <div class="alert alert-info infoDiv" role="alert">
+          <p style="font-size:15px"><cn>程序版本号</cn> (Program Version Ner) 0.2.0_Beta 2016/10/19</p>
+          <p style="font-size:15px">AI <cn>版本号</cn> (AI Version Number) : 0.1.2_Beta 2016/10/19</p>
+          <br/>
+          <p style="font-size:15px"><cn>如果您发现此程序的任何</cn> BUG <cn>，欢迎您将其反馈给我</cn> ;-)</p>
+          <p style="font-size:15px">If you find any BUG in this program, you <br/> are welcome to send me a review ;-)</p>
+          <p style="font-size:15px">Author : Evensgn</p>
+          <p style="font-size:15px">E-mail : joe-fan (at) foxmail.com</p>
+          <p style="font-size:15px">Home Page : <a href="http://www.evensgn.com" target="_blank">Evensgn's Station</a></p>
+        </div>
+        <div id="gameState" class="alert alert-success infoDiv" role="alert">
+          Use the Force, Luke!
+        </div>
+        <div id="btn-1" class="alert" role="alert">
+          <button type="button" class="btn btn-primary btn-lg" onclick="ChooseOrder();"><cn>人机对弈</cn> (Player vs AI)</button>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <button type="button" class="btn btn-primary btn-lg" onclick="StartGame(0, 0);"><cn>双人对弈</cn> (P vs P)</button>
+        </div>
+        <div id="btn-2" class="alert" role="alert">
+          <button type="button" class="btn btn-warning btn-lg" onclick="StartGame(1, 0);"><cn>AI先手</cn> (AI moves fisrt)</button>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <button type="button" class="btn btn-warning btn-lg" onclick="StartGame(1, 1);"><cn>我先手</cn> (I move first)</button>
+        </div>
+        <div id="btn-3" class="alert" role="alert">
+          <button type="button" class="btn btn-warning btn-lg" onclick="WithDraw();"><cn>悔棋</cn> (Withdraw)</button>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <button type="button" class="btn btn-warning btn-lg" onclick="Restart();"><cn>重新开始棋局</cn> (Restart)</button>
+        </div>
+        <div id="btn-4" class="alert" role="alert">
+          <button type="button" class="btn btn-danger btn-lg" onclick="Initialize();"><cn>确认重新开始</cn> (Restart)</button>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <button type="button" class="btn btn-danger btn-lg" onclick="CancelRestart();"><cn>取消</cn> (Cancel)</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="mastfoot" id="footer">
+      <div class="inner">
+        <p>Copyright © 2016 <a href="http://www.evensgn.com" target="_blank">Evensgn</a></p>
+      </div>
+    </div>
+
+    <script src="chess.js"></script>
+    <script>
+      SetBackGround();
+      Initialize();
+    </script>
+    
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- <script src="../../assets/js/ie-emulation-modes-warning.js"></script> -->
+
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="http://v3.bootcss.com/assets/js/docs.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../aassets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
